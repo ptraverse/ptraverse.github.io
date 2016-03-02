@@ -10,11 +10,13 @@
     <script type="text/javascript" src="github-activity-0.1.0.min.js"></script>
     
     <script type="text/javascript">
-    	GitHubActivity.feed({
-          username: "ptraverse",
-    	  selector: "#feed",
-    	  limit: 20 // optional
-        });
+        $(document).ready(function() {
+            GitHubActivity.feed({
+              username: "ptraverse",
+              selector: "#feed",
+              limit: 20 // optional
+            });
+        });    	
     </script>
     
 </head>
