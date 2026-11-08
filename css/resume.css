@@ -1,18 +1,35 @@
-* { margin: 0; padding: 0; }
-body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(../images/noise.jpg); }
-.clear { clear: both; }
-#page-wrap { width: 800px; margin: 40px auto 60px; }
-#pic { float: right; margin: -30px 0 0 0; }
-h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
-h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
-p { margin: 0 0 16px 0; }
-a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
-a:hover { border-bottom-style: solid; color: black; }
-ul { margin: 0 0 32px 17px; }
-#objective { width: 500px; float: left; }
-#objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-dd { width: 600px; float: right; }
-dd.clear { float: none; margin: 0; height: 15px; }
-#feed { height: 300px;}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root { color-scheme: light; --ink: #202c35; --muted: #596773; --accent: #176c67; --line: #dce3e5; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f2f4f3; color: var(--ink); font: 15px/1.65 'DM Sans', sans-serif; }
+#page-wrap { max-width: 940px; margin: 48px auto; padding: 58px 72px; background: #fff; border-top: 6px solid var(--accent); box-shadow: 0 8px 40px #20332c09; }
+header { padding-bottom: 30px; }
+.eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+h1, h2, h3 { font-family: Manrope, sans-serif; }
+h1 { margin: 0; font-size: clamp(32px, 6vw, 46px); line-height: 1.2; letter-spacing: -1.8px; font-weight: 800; }
+.title { margin: 10px 0 18px; font-size: 20px; color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.summary { margin: 26px 0 0; font-size: 16px; line-height: 1.8; }
+section { border-top: 1px solid var(--line); padding: 25px 0 10px; }
+h2 { margin: 0 0 24px; color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; }
+article { margin-bottom: 30px; }
+.job-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+h3 { margin: 0; font-size: 18px; font-weight: 800; line-height: 1.4; }
+.date { color: var(--muted); font-size: 12px; white-space: nowrap; }
+p { margin: 7px 0; }
+.role { margin: 4px 0; font-weight: 600; }
+.role span { margin-left: 12px; color: var(--muted); font-weight: 400; font-size: 13px; }
+.previous-role { color: var(--muted); font-size: 13px; margin-top: 0; }
+ul { padding-left: 19px; margin: 13px 0 0; }
+li { padding-left: 3px; margin: 6px 0; }
+li::marker { color: var(--accent); }
+.compact-job > p:last-child { font-size: 14px; }
+.skills { display: grid; grid-template-columns: 150px 1fr; gap: 10px 20px; margin: 0 0 20px; }
+dt { font-weight: 600; } dd { margin: 0; color: var(--muted); }
+.languages { margin: 16px 0; }
+footer { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+@media(max-width: 640px) { body { background: white; } #page-wrap { margin: 0; padding: 32px 24px; box-shadow: none; } .job-heading { display: block; } .date { display: block; margin-top: 3px; } .role span { display: block; margin: 0; } .skills { grid-template-columns: 1fr; gap: 3px; } dd { margin-bottom: 10px; } }
+@media print { body { background: white; font-size: 10pt; } #page-wrap { max-width: none; margin: 0; padding: 0; box-shadow: none; border-top: 0; } header { padding-bottom: 18px; } h1 { font-size: 30pt; } .summary { font-size: 10pt; } article { break-inside: avoid; margin-bottom: 18px; } section { padding-top: 16px; } a { color: inherit; } footer { display: none; } }
