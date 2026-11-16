@@ -32,4 +32,21 @@ dt { font-weight: 600; } dd { margin: 0; color: var(--muted); }
 .languages { margin: 16px 0; }
 footer { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 @media(max-width: 640px) { body { background: white; } #page-wrap { margin: 0; padding: 32px 24px; box-shadow: none; } .job-heading { display: block; } .date { display: block; margin-top: 3px; } .role span { display: block; margin: 0; } .skills { grid-template-columns: 1fr; gap: 3px; } dd { margin-bottom: 10px; } }
-@media print { body { background: white; font-size: 10pt; } #page-wrap { max-width: none; margin: 0; padding: 0; box-shadow: none; border-top: 0; } header { padding-bottom: 18px; } h1 { font-size: 30pt; } .summary { font-size: 10pt; } article { break-inside: avoid; margin-bottom: 18px; } section { padding-top: 16px; } a { color: inherit; } footer { display: none; } }
+@media print {
+  body { background: white; font-size: 10pt; line-height: 1.45; }
+  #page-wrap { max-width: none; margin: 0; padding: 0; box-shadow: none; border-top: 0; }
+  header { padding-bottom: 18px; }
+  h1 { font-size: 30pt; }
+  .summary { font-size: 10pt; }
+  section, article { page-break-inside: avoid; break-inside: avoid; }
+  /* Experience spans multiple pages; keep its individual jobs together instead. */
+  section[aria-labelledby="experience"]:has(article + article) { page-break-inside: auto; break-inside: auto; }
+  article { margin-bottom: 14px; }
+  section { padding-top: 12px; padding-bottom: 6px; }
+  h2 { margin-bottom: 16px; }
+  ul { margin-top: 9px; }
+  li { margin: 4px 0; }
+  h2, h3, .job-heading { page-break-after: avoid; break-after: avoid; }
+  a { color: inherit; }
+  .screen-only, footer { display: none; }
+}
